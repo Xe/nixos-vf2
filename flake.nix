@@ -81,6 +81,8 @@
             };
           };
 
+          networking.hostName = "hiro";
+
           systemd.services."serial-getty@hvc0".enable = false;
 
           # If getty is not explicitly enabled, it will not start automatically.
@@ -102,6 +104,8 @@
             mutableUsers = false;
             users.root.password = "secret";
           };
+
+          services.tailscale.enable = true;
 
           system.stateVersion = "22.11";
 
